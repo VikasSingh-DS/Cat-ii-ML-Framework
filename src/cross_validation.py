@@ -75,7 +75,7 @@ class CrossValidation:
             if self.num_targets != 1:
                 raise Exception("Invalid number of target for this problem type")
             targets = self.dataframe[self.target_cols[0]].apply(
-                lambda x: len(str(X).split(self.multilabel_delimiter))
+                lambda x: len(str(x).split(self.multilabel_delimiter))
             )
             kf = model_selection.StratifiedKFold(n_splits=self.num_folds)
 
